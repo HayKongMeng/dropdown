@@ -35,22 +35,12 @@ export default function AccessKey() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
       <div className="text-center space-y-8">
-        <div>
-          <h1 className="text-3xl font-bold text-slate-800 mb-4">
-            Delete Access Key Dialog Demo
-          </h1>
-          <p className="text-slate-600 max-w-md mx-auto mb-8">
-            Click the button below to see the Delete Access Key confirmation
-            dialog in action.
-          </p>
-        </div>
-
         <DeleteAccessKeyDialog
           onConfirm={handleDeleteConfirm}
           onCancel={handleDeleteCancel}
         >
           <Button variant="destructive" size="lg">
-            Delete Access Key
+            Click
           </Button>
         </DeleteAccessKeyDialog>
 

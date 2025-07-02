@@ -4,6 +4,7 @@ import Data from './pages/Data';
 import { BrowserRouter, NavLink, Route, Router, Routes } from "react-router-dom";
 import Table from './pages/Table';
 import AccessKey from './pages/AccessKey';
+import CreateAccessKey from './pages/CreateAccessKey';
 function App() {
   return (
     <BrowserRouter>
@@ -45,11 +46,24 @@ function App() {
         >
           Access Key
         </NavLink>
+        <NavLink
+          to="/createaccesskey"
+          style={({ isActive }) => ({
+            padding: '0.5rem 1rem',
+            borderBottom: isActive ? '2px solid #007bff' : 'none',
+            color: isActive ? '#007bff' : '#333',
+            textDecoration: 'none',
+            fontWeight: isActive ? 'bold' : 'normal',
+          })}
+        >
+          Create Access Key
+        </NavLink>
       </div>
       <Routes>
         <Route path="/data" element={<Data />} />
         <Route path="/table" element={<Table />} />
         <Route path="/accesskey" element={<AccessKey />} />
+        <Route path="/createaccesskey" element={<CreateAccessKey />} />
       </Routes>
     </BrowserRouter>
   );
