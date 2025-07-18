@@ -1,10 +1,12 @@
 
 import './output.css';
 import Data from './pages/Data';
-import { BrowserRouter, NavLink, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import Table from './pages/Table';
 import AccessKey from './pages/AccessKey';
 import CreateAccessKey from './pages/CreateAccessKey';
+import OverviewHr from './pages/OverviewHr';
+import Attendance from './pages/AttendanceCard';
 function App() {
   return (
     <BrowserRouter>
@@ -58,12 +60,39 @@ function App() {
         >
           Create Access Key
         </NavLink>
+        <NavLink
+          to="/OverviewHr"
+          style={({ isActive }) => ({
+            padding: '0.5rem 1rem',
+            borderBottom: isActive ? '2px solid #007bff' : 'none',
+            color: isActive ? '#007bff' : '#333',
+            textDecoration: 'none',
+            fontWeight: isActive ? 'bold' : 'normal',
+          })}
+        >
+          OverviewHr
+        </NavLink>
+        <NavLink
+          to="/Attendance"
+          style={({ isActive }) => ({
+            padding: '0.5rem 1rem',
+            borderBottom: isActive ? '2px solid #007bff' : 'none',
+            color: isActive ? '#007bff' : '#333',
+            textDecoration: 'none',
+            fontWeight: isActive ? 'bold' : 'normal',
+          })}
+        >
+          Attendance
+        </NavLink>
       </div>
       <Routes>
         <Route path="/data" element={<Data />} />
         <Route path="/table" element={<Table />} />
         <Route path="/accesskey" element={<AccessKey />} />
         <Route path="/createaccesskey" element={<CreateAccessKey />} />
+        <Route path="/OverviewHr" element={<OverviewHr />} />
+        <Route path="/Attendance" element={<Attendance />} />
+
       </Routes>
     </BrowserRouter>
   );
