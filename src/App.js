@@ -8,6 +8,7 @@ import CreateAccessKey from './pages/CreateAccessKey';
 import OverviewHr from './pages/OverviewHr';
 import Attendance from './pages/AttendanceCard';
 import ProfilePage from './pages/ProfilePage';
+import LoginPage from './pages/LoginPage';
 function App() {
   return (
     <BrowserRouter>
@@ -97,6 +98,18 @@ function App() {
         >
           ProfilePage
         </NavLink>
+        <NavLink
+          to="/LoginPage"
+          style={({ isActive }) => ({
+            padding: '0.5rem 1rem',
+            borderBottom: isActive ? '2px solid #007bff' : 'none',
+            color: isActive ? '#007bff' : '#333',
+            textDecoration: 'none',
+            fontWeight: isActive ? 'bold' : 'normal',
+          })}
+        >
+          LoginPage
+        </NavLink>
       </div>
       <Routes>
         <Route path="/data" element={<Data />} />
@@ -106,6 +119,7 @@ function App() {
         <Route path="/OverviewHr" element={<OverviewHr />} />
         <Route path="/Attendance" element={<Attendance />} />
         <Route path="/ProfilePage" element={<ProfilePage />} />
+        <Route path="/LoginPage" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );
